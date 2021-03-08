@@ -11,6 +11,7 @@ def dynamodb_local():
         'amazon/dynamodb-local',
         ports={8000:8000},
         detach=True,
+        remove=True,
     )
 
     try:
@@ -24,6 +25,6 @@ def dynamodb_local():
 def create_tables(dynamodb_local):
     from .models import TestModel
 
-    TestModel.create_table()
+    TestModel.create_table(wait=True)
     yield
     TestModel.delete_table()

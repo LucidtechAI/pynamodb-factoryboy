@@ -12,3 +12,6 @@ class TestModel(Model):
         write_capacity_units = 10
 
     unicode_attr = attributes.UnicodeAttribute(hash_key=True)
+    binary_attr = attributes.BinaryAttribute()
+    binary_set_attr = attributes.BinarySetAttribute()
+    boolean_attr = attributes.BooleanAttribute()
